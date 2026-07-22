@@ -15,214 +15,121 @@
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html,body{height:100%;background:var(--bg);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
-  .slide{display:none;position:fixed;inset:0;padding:6vh 8vw;flex-direction:column;justify-content:center;overflow-y:auto}
+  .slide{display:none;position:fixed;inset:0;padding:5vh 7vw;flex-direction:column;justify-content:center;overflow-y:auto}
   .slide.on{display:flex}
-  .kicker{font-size:.82rem;letter-spacing:.22em;text-transform:uppercase;color:var(--acc);margin-bottom:1.2rem}
-  h1{font-family:var(--serif);font-size:clamp(1.9rem,4.6vw,3.4rem);font-weight:400;line-height:1.15;margin-bottom:1.4rem}
-  h2{font-family:var(--serif);font-size:clamp(1.5rem,3.2vw,2.4rem);font-weight:400;line-height:1.2;margin-bottom:1.6rem}
-  p.lead{font-size:clamp(1rem,1.6vw,1.2rem);color:var(--dim);max-width:60ch;line-height:1.6}
-  .foot{margin-top:auto;padding-top:1.6rem;font-size:.8rem;color:var(--faint)}
-  .grid{display:grid;gap:1rem}
+  .kicker{font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;color:var(--acc);margin-bottom:1rem}
+  h2{font-family:var(--serif);font-size:clamp(1.4rem,3vw,2.2rem);font-weight:400;line-height:1.2;margin-bottom:1.3rem}
+  .grid{display:grid;gap:.9rem}
   .g2{grid-template-columns:repeat(2,1fr)}
   .g3{grid-template-columns:repeat(3,1fr)}
   .g4{grid-template-columns:repeat(4,1fr)}
   @media(max-width:820px){.g2,.g3,.g4{grid-template-columns:1fr}}
-  .card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:1.2rem 1.3rem}
-  .num{font-family:var(--serif);font-size:clamp(1.7rem,3.4vw,2.7rem);line-height:1.05;margin-bottom:.45rem}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:1.1rem 1.2rem}
+  .num{font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.05;margin-bottom:.4rem}
   .num small{font-size:55%;color:var(--dim)}
-  .lbl{font-size:.86rem;color:var(--dim);line-height:1.45}
-  .src{font-size:.74rem;color:var(--faint);margin-top:.6rem}
-  .note{border-left:3px solid var(--warn);padding:.7rem 1rem;color:var(--dim);font-size:.92rem;line-height:1.55;background:rgba(232,180,79,.06);border-radius:0 8px 8px 0;margin-top:1.2rem;max-width:70ch}
-  .accline{border-left:3px solid var(--acc);padding:.7rem 1rem;color:var(--ink);font-size:1rem;line-height:1.6;background:rgba(79,209,165,.06);border-radius:0 8px 8px 0;margin-top:1.2rem;max-width:70ch}
-  table{border-collapse:collapse;width:100%;font-size:.9rem}
-  th{color:var(--faint);text-transform:uppercase;font-size:.7rem;letter-spacing:.12em;text-align:left;padding:.45rem .7rem;border-bottom:1px solid var(--line)}
-  td{padding:.5rem .7rem;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.45}
+  .lbl{font-size:.85rem;color:var(--dim);line-height:1.45}
+  .lbl strong{color:var(--ink)}
+  .src{font-size:.72rem;color:var(--faint);margin-top:.55rem;line-height:1.5}
+  .src a{color:var(--faint);text-decoration:none;border-bottom:1px dotted var(--faint)}
+  .note{border-left:3px solid var(--warn);padding:.6rem .9rem;color:var(--dim);font-size:.86rem;line-height:1.5;background:rgba(232,180,79,.06);border-radius:0 8px 8px 0;margin-top:1rem;max-width:75ch}
+  .note a,.accline a{color:inherit;text-decoration:none;border-bottom:1px dotted var(--faint)}
+  .accline{border-left:3px solid var(--acc);padding:.6rem .9rem;color:var(--ink);font-size:.95rem;line-height:1.55;background:rgba(79,209,165,.06);border-radius:0 8px 8px 0;margin-top:1rem;max-width:75ch}
+  table{border-collapse:collapse;width:100%;font-size:.87rem}
+  th{color:var(--faint);text-transform:uppercase;font-size:.68rem;letter-spacing:.12em;text-align:left;padding:.4rem .65rem;border-bottom:1px solid var(--line)}
+  td{padding:.45rem .65rem;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.4}
   td.n{font-family:var(--serif);white-space:nowrap}
-  td.s{color:var(--faint);font-size:.78rem}
+  td.s{color:var(--faint);font-size:.75rem}
+  td.s a{color:var(--faint);text-decoration:none;border-bottom:1px dotted var(--faint)}
   ul.clean{list-style:none}
-  ul.clean li{padding:.5rem 0 .5rem 1.4rem;position:relative;color:var(--dim);line-height:1.55;max-width:72ch}
+  ul.clean li{padding:.45rem 0 .45rem 1.4rem;position:relative;color:var(--dim);line-height:1.55;max-width:78ch}
   ul.clean li::before{content:"—";position:absolute;left:0;color:var(--acc)}
   ul.clean li strong{color:var(--ink);font-weight:600}
-  .srcs{columns:2;column-gap:3rem;font-size:.8rem;line-height:1.7;color:var(--dim)}
-  @media(max-width:820px){.srcs{columns:1}}
-  .srcs a{color:var(--dim);text-decoration:none;border-bottom:1px dotted var(--faint)}
-  .srcs h3{font-family:var(--sans);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--acc);margin:.9rem 0 .3rem;break-after:avoid}
+  ul.clean li a{color:var(--faint);text-decoration:none;border-bottom:1px dotted var(--faint)}
   #hud{position:fixed;bottom:1.1rem;right:1.4rem;font-size:.78rem;color:var(--faint);z-index:9;user-select:none}
   #hint{position:fixed;bottom:1.1rem;left:1.4rem;font-size:.72rem;color:var(--faint);z-index:9}
-  .tag{display:inline-block;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--warn);border:1px solid rgba(232,180,79,.4);border-radius:4px;padding:.15rem .5rem;margin-left:.6rem;vertical-align:middle}
+  .tag{display:inline-block;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--warn);border:1px solid rgba(232,180,79,.4);border-radius:4px;padding:.12rem .45rem;margin-left:.55rem;vertical-align:middle}
 </style>
 </head>
 <body>
 
-<!-- 1 · PORTADA -->
+<!-- 1 · TAM -->
 <section class="slide on">
-  <div class="kicker">MCCP · Análisis de mercado · Julio 2026 · v1.0.0</div>
-  <h1>A quién.<br>TAM · SAM · SOM de la<br>mensajería conversacional</h1>
-  <p class="lead">Dimensionado del mercado de la conversación gobernada: el canal global, el recorte estratégico en las tres regiones donde el grupo opera, y lo obtenible en las tres plazas donde ya hay pie.</p>
-  <div class="foot">Registro objetivo: cada cifra con fuente pública · horquillas donde hay dispersión · suelos, no techos · documento no indexable</div>
-</section>
-
-<!-- 2 · MÉTODO -->
-<section class="slide">
-  <div class="kicker">Método</div>
-  <h2>Cuatro reglas antes de cualquier número</h2>
-  <ul class="clean">
-    <li><strong>Cada cifra lleva fuente y año.</strong> Registros oficiales y fuentes primarias primero (BCE/EBF, EIOPA, NHC, CEMR, FELABAN, HKMA, CNBV, INE, Pew, resultados de Meta); casas de análisis solo como orden de magnitud, y nombradas.</li>
-    <li><strong>Donde hay dispersión, se da la horquilla</strong> — no se elige el número que más conviene.</li>
-    <li><strong>Los totales son suelos, no techos:</strong> lo que no tiene censo verificado queda fuera del recuento, y se dice qué quedó fuera.</li>
-    <li><strong>Cuentas ≠ compradores.</strong> La compra en estos sectores se agrega (servicios de salud sobre hospitales, diputaciones sobre municipios, grupos sobre filiales). El censo dimensiona el terreno; el pipeline se cuenta aparte.</li>
-  </ul>
-  <div class="note">Sin cifras de ingresos propios (no auditadas) y sin material de terceros bajo acuerdo de confidencialidad: todo lo que sigue es verificable desde fuentes públicas.</div>
-</section>
-
-<!-- 3 · TAM -->
-<section class="slide">
   <div class="kicker">TAM — El canal, global</div>
   <h2>El tamaño del canal, en cuatro hechos</h2>
   <div class="grid g4">
     <div class="card"><div class="num">3.000&nbsp;M+</div><div class="lbl">usuarios mensuales de WhatsApp</div><div class="src">Meta, resultados Q1-2025</div></div>
-    <div class="card"><div class="num">&gt;1.000&nbsp;M</div><div class="lbl">hilos activos/día entre personas y negocios, en las tres apps de Meta</div><div class="src">Meta Newsroom, jun-2026</div></div>
-    <div class="card"><div class="num">$2.000&nbsp;M</div><div class="lbl">run rate anual de la mensajería de pago de WhatsApp, cruzado en Q4-2025</div><div class="src">CFO de Meta, earnings call ene-2026</div></div>
-    <div class="card"><div class="num">23–30<small>&nbsp;mil M$</small></div><div class="lbl">gasto mundial en mensajería empresarial 2025 (CPaaS, <em>todos</em> los canales)</div><div class="src">Precedence ↔ Juniper (horquilla entre casas)</div></div>
+    <div class="card"><div class="num">&gt;1.000&nbsp;M</div><div class="lbl">hilos activos/día entre personas y negocios, en las tres apps de Meta</div><div class="src"><a href="https://about.fb.com/news/2026/06/meta-business-agent/">Meta Newsroom, jun-2026</a></div></div>
+    <div class="card"><div class="num">$2.000&nbsp;M</div><div class="lbl">run rate anual de la mensajería de pago de WhatsApp, cruzado en Q4-2025</div><div class="src"><a href="https://www.fool.com/earnings/call-transcripts/2026/01/28/meta-meta-q4-2025-earnings-call-transcript/">CFO de Meta, earnings call ene-2026</a></div></div>
+    <div class="card"><div class="num">23–30<small>&nbsp;mil M$</small></div><div class="lbl">gasto mundial en mensajería empresarial 2025 (CPaaS, <em>todos</em> los canales)</div><div class="src">Precedence ↔ <a href="https://www.mi-3.com.au/17-04-2025/cpaas-market-set-surpass-34-billion-2026-juniper-research">Juniper</a> (horquilla entre casas)</div></div>
   </div>
   <div class="accline">Ninguno de estos números es el mercado de MCCP. Son el tamaño del canal sobre el que se construye.</div>
 </section>
 
-<!-- 4 · SAM DEFINICIÓN -->
+<!-- 2 · SAM I: DEFINICIÓN + CUENTAS -->
 <section class="slide">
-  <div class="kicker">SAM — Definición y foso</div>
-  <h2>Sectores estratégicos × tres regiones</h2>
-  <div class="grid g2">
-    <div class="card">
-      <div class="lbl" style="margin-bottom:.6rem"><strong style="color:var(--ink)">El recorte</strong></div>
-      <p class="lead" style="font-size:1rem">Banca · seguros · salud · gobierno, en las tres regiones donde el grupo ya opera: <strong style="color:var(--ink)">EMEA, APAC y Latinoamérica</strong> (presencia España – Hong Kong – México).</p>
-    </div>
-    <div class="card">
-      <div class="lbl" style="margin-bottom:.6rem"><strong style="color:var(--ink)">El foso, por arquitectura</strong></div>
-      <p class="lead" style="font-size:1rem">El agente que Meta globalizó en junio de 2026, tal como está construido, no puede entrar ahí: <strong style="color:var(--ink)">custodia con valor de prueba, residencia del dato y llaves del cliente</strong> no se añaden con una cláusula — exigen otra arquitectura.</p>
-    </div>
-  </div>
-  <div class="note">Inferencia arquitectónica desde el producto público de Meta (agente sobre infraestructura de Meta, con los datos en Meta), no información privilegiada. El vertical Defensa forma parte del mercado objetivo del grupo pero se excluye de este dimensionado por carecer aún de ancla verificable.</div>
-</section>
-
-<!-- 5 · SAM EN CUENTAS -->
-<section class="slide">
-  <div class="kicker">SAM — En cuentas</div>
-  <h2>~170.000 organizaciones censables <span class="tag">suelo</span></h2>
+  <div class="kicker">SAM 1/2 — Sectores estratégicos × tres regiones</div>
+  <h2>Banca · seguros · salud · gobierno en EMEA, APAC y LATAM: ~170.000 cuentas <span class="tag">suelo</span></h2>
   <table>
     <tr><th>Sector</th><th>Región</th><th>Cuentas</th><th>Fuente</th></tr>
-    <tr><td>Banca</td><td>Europa</td><td class="n">4.834</td><td class="s">EBF Facts &amp; Figures 2025 (base BCE, dato 2024)</td></tr>
-    <tr><td>Banca</td><td>China · HK · LATAM · MX</td><td class="n">~4.600 · 149 · 524 · 52</td><td class="s">NFRA/Statista · HKMA (oct-25) · FELABAN (2025) · CNBV</td></tr>
-    <tr><td>Seguros</td><td>EEE</td><td class="n">2.153 + 93 grupos</td><td class="s">EIOPA, Solvencia II (Q4-2024)</td></tr>
-    <tr><td>Salud</td><td>China · Europa</td><td class="n">~39.000 · 19.000+</td><td class="s">NHC 2024 · European Hospital Register (UE: 2,3 M camas, Eurostat)</td></tr>
-    <tr><td>Gobierno</td><td>UE · Brasil · México</td><td class="n">92.247 · 5.570 · 2.469</td><td class="s">CEMR · IBGE · INEGI</td></tr>
+    <tr><td>Banca</td><td>Europa</td><td class="n">4.834</td><td class="s"><a href="https://www.ebf.eu/ebf-media-centre/ebf-facts-and-figures-2025/">EBF Facts &amp; Figures 2025</a> (base BCE, dato 2024)</td></tr>
+    <tr><td>Banca</td><td>China · HK · LATAM · MX</td><td class="n">~4.600 · 149 · 524 · 52</td><td class="s"><a href="https://www.statista.com/statistics/259910/number-of-banks-in-china/">NFRA/Statista</a> · <a href="https://statrys.com/guides/hong-kong/banking/list-of-banks">HKMA</a> (oct-25) · <a href="https://felaban.com/31-informe-economico-bancario-trimestral/">FELABAN</a> (2025) · <a href="https://www.gob.mx/cnbv/acciones-y-programas/informacion-estadistica-de-la-banca-multiple">CNBV</a></td></tr>
+    <tr><td>Seguros</td><td>EEE</td><td class="n">2.153 + 93 grupos</td><td class="s"><a href="https://www.eiopa.europa.eu/tools-and-data/insurance-statistics_en">EIOPA</a>, Solvencia II (Q4-2024)</td></tr>
+    <tr><td>Salud</td><td>China · Europa</td><td class="n">~39.000 · 19.000+</td><td class="s"><a href="https://www.chinadaily.com.cn/a/202512/04/WS6931954ba310d6866eb2cef9.html">NHC 2024</a> · European Hospital Register (UE: 2,3&nbsp;M camas, <a href="https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20250715-2">Eurostat</a>)</td></tr>
+    <tr><td>Gobierno</td><td>UE · Brasil · México</td><td class="n">92.247 · 5.570 · 2.469</td><td class="s"><a href="https://www.ccre.org/img/uploads/piecesjointe/filename/CEMR_structures_and_competences_2016_EN.pdf">CEMR</a> · IBGE · INEGI</td></tr>
   </table>
-  <div class="note"><strong>Fuera del recuento, a propósito:</strong> banca y seguros de India, Japón, Corea y ASEAN; aseguradoras de APAC y LATAM; hospitales de India, ASEAN y LATAM; administraciones del resto de APAC. El total real es mayor. Y cuentas ≠ compradores: la compra se agrega — un orden de magnitud menos de pipeline.</div>
+  <div class="note"><strong>Suelo, no techo:</strong> fuera del recuento quedan banca y seguros de India, Japón, Corea y ASEAN; aseguradoras de APAC/LATAM; hospitales de India, ASEAN y LATAM; administraciones del resto de APAC. Y <strong>cuentas ≠ compradores</strong>: la compra se agrega (servicios de salud, diputaciones, grupos) — un orden de magnitud menos de pipeline.</div>
 </section>
 
-<!-- 6 · SAM EN DINERO -->
+<!-- 3 · SAM II: DINERO + FOSO/DEMANDA -->
 <section class="slide">
-  <div class="kicker">SAM — En dinero</div>
+  <div class="kicker">SAM 2/2 — Peso en el negocio y foso</div>
   <h2>En torno a un tercio del gasto del canal</h2>
   <div class="grid g3">
-    <div class="card"><div class="num">30–40&nbsp;%</div><div class="lbl">del gasto del canal es banca + seguros + salud + gobierno (retail ≈ 25 % según Juniper; BFSI 15–20 · salud 10–15 · gobierno 5–10, casas medias)</div></div>
-    <div class="card"><div class="num">7–12<small>&nbsp;mil M$/año</small></div><div class="lbl">valor global del SAM sobre la base CPaaS 2025 (23–30 mil M$)</div></div>
-    <div class="card"><div class="num">5–8<small>&nbsp;mil M$/año</small></div><div class="lbl">en EMEA + APAC + LATAM (Norteamérica ≈ 35–37 % del gasto queda fuera)</div></div>
+    <div class="card"><div class="num">30–40&nbsp;%</div><div class="lbl">del gasto del canal es banca + seguros + salud + gobierno</div><div class="src">retail ≈ 25 % (<a href="https://www.juniperresearch.com/press/cpaas-retail-ecommerce-to-account-for-quarter-of-global-cpaas-revenue/">Juniper</a>); BFSI 15–20 · salud 10–15 · gobierno 5–10 (<a href="https://www.alliedmarketresearch.com/conversational-ai-market-A13682">casas medias</a>, horquillas)</div></div>
+    <div class="card"><div class="num">7–12<small>&nbsp;mil M$/año</small></div><div class="lbl">valor global del SAM sobre la base CPaaS 2025; <strong>5–8 mil M$</strong> en EMEA+APAC+LATAM</div><div class="src">Norteamérica ≈ 35–37 % del gasto queda fuera (<a href="https://www.mordorintelligence.com/industry-reports/communication-platform-as-a-service-cpaas-market">Mordor</a>)</div></div>
+    <div class="card"><div class="num">&gt;$2.000&nbsp;M</div><div class="lbl">en multas SEC/CFTC a &gt;100 firmas por conversaciones de negocio sin gobernar — la demanda, probada por los reguladores</div><div class="src"><a href="https://www.goodwinlaw.com/en/insights/publications/2022/10/10_06-sec-and-cftc-send-powerful-message">Goodwin</a> · <a href="https://www.leapxpert.com/electronic-messaging-compliance-investigation-and-regulatory-fines-summary/">resumen de casos</a>, 2022–2025</div></div>
   </div>
-  <div class="accline"><strong>El matiz que importa:</strong> ese reparto es del CPaaS multicanal. En el canal <strong>WhatsApp</strong>, Norteamérica es marginal — EE.&nbsp;UU.: ~32 % de adultos (Pew, 2025) frente a 91 % España (usuarios RRSS), ~75 % Hong Kong, 78 % México. Para el negocio WhatsApp-céntrico, estas tres regiones son sustancialmente todo el mercado.</div>
-  <div class="note">Los censos de la slide anterior son registros de primer nivel. Los porcentajes de reparto por vertical y región vienen de casas de análisis medias, con dispersión — por eso se dan como horquillas y se redondean a «un tercio» y «dos tercios».</div>
+  <div class="accline"><strong>En el canal WhatsApp, estas tres regiones son casi todo el mercado:</strong> EE.&nbsp;UU. ~32 % de adultos (<a href="https://www.pewresearch.org/internet/2025/11/20/americans-social-media-use-2025/">Pew 2025</a>) frente a 91 % España · ~75 % HK · 78 % México.</div>
+  <div class="note"><strong>El foso, por arquitectura:</strong> el agente que Meta globalizó en junio, tal como está construido, no puede entrar — custodia con valor de prueba, residencia del dato y llaves del cliente exigen otra arquitectura. De las multas vive hoy una industria que archiva <em>a posteriori</em> (Smarsh 2001, Global Relay 1999, LeapXpert); la custodia <strong>en origen</strong>, con llaves del cliente y residencia europea, no la da nadie.</div>
 </section>
 
-<!-- 7 · DEMANDA PROBADA -->
-<section class="slide">
-  <div class="kicker">La demanda, probada por los reguladores</div>
-  <h2>El canal sin gobernar ya costó más de $2.000&nbsp;M en multas</h2>
-  <div class="grid g3">
-    <div class="card"><div class="num">&gt;$2.000&nbsp;M</div><div class="lbl">en multas de la SEC y la CFTC a más de 100 firmas por conversaciones de negocio en canales sin gobernar (tanda sep-2022: $1.100&nbsp;M + $710&nbsp;M)</div><div class="src">SEC · CFTC · Goodwin, 2022–2025</div></div>
-    <div class="card"><div class="num">Una industria</div><div class="lbl">vive hoy de ese negocio — Smarsh (2001), Global Relay (1999), LeapXpert — capturando y archivando WhatsApp <em>a posteriori</em>, para eDiscovery</div><div class="src">webs corporativas</div></div>
-    <div class="card"><div class="num">El vacío</div><div class="lbl">custodia <strong>en origen</strong>, con valor de prueba, llaves del cliente y residencia europea: eso no lo da nadie hoy</div><div class="src">análisis propio, verificable contra la oferta pública de cada actor</div></div>
-  </div>
-  <div class="foot">El archivo a posteriori demuestra que el problema paga. El gobierno del canal en origen es la capa que falta — y la que MCCP construye.</div>
-</section>
-
-<!-- 8 · SOM -->
+<!-- 4 · SOM -->
 <section class="slide">
   <div class="kicker">SOM — Lo obtenible, en tres plazas con pie real</div>
   <h2>España · Hong Kong · México</h2>
   <div class="grid g3">
     <div class="card">
-      <div class="lbl" style="margin-bottom:.5rem"><strong style="color:var(--ink)">España — gobierno digital</strong></div>
+      <div class="lbl" style="margin-bottom:.5rem"><strong>España — gobierno digital</strong></div>
       <div class="lbl">Contrato público adjudicado en licitación. Censo finito: 17 servicios de salud (387 hospitales públicos) · 170 aseguradoras · ~185 entidades de crédito · 8.132 municipios (los grandes licitan solos; el resto, agregado). WhatsApp: 91&nbsp;% de uso mensual.</div>
-      <div class="src">CNH 2025 · DGSFP · BdE · INE · IAB Spain 2025</div>
+      <div class="src"><a href="https://www.sanidad.gob.es/estadEstudios/estadisticas/sisInfSanSNS/ofertaRecursos/hospitales/docs/CNH_2025.pdf">CNH 2025</a> · <a href="https://www.inese.es/el-sector-asegurador-espanol-reduce-ligeramente-su-numero-de-entidades-operativas/">DGSFP</a> · <a href="https://www.bde.es/wbe/en/punto-informacion/contenidos/registros/registros-entidades/">BdE</a> · <a href="https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736177031&menu=ultiDatos&idp=1254734710990">INE</a> · <a href="https://iabspain.es/estudio/estudio-redes-sociales-2025-iab-spain/">IAB Spain 2025</a></div>
     </div>
     <div class="card">
-      <div class="lbl" style="margin-bottom:.5rem"><strong style="color:var(--ink)">Hong Kong — BSP de Meta desde 2019</strong></div>
+      <div class="lbl" style="margin-bottom:.5rem"><strong>Hong Kong — BSP de Meta desde 2019</strong></div>
       <div class="lbl">Standard Chartered, McDonald's HK o Toyota/Lexus compraron el canal — la capa de gobierno es el paso siguiente para ese mismo comprador. 149 bancos con licencia en la plaza. WhatsApp: plataforma líder (~75&nbsp;%).</div>
-      <div class="src">sanuker.com (casos públicos) · HKMA · Statista</div>
+      <div class="src"><a href="https://sanuker.com">sanuker.com</a> (casos públicos) · <a href="https://statrys.com/guides/hong-kong/banking/list-of-banks">HKMA</a> · <a href="https://www.statista.com/statistics/412500/hk-social-network-penetration/">Statista</a></div>
     </div>
     <div class="card">
-      <div class="lbl" style="margin-bottom:.5rem"><strong style="color:var(--ink)">México — la puerta LATAM</strong></div>
+      <div class="lbl" style="margin-bottom:.5rem"><strong>México — la puerta LATAM</strong></div>
       <div class="lbl">77&nbsp;M de usuarios de WhatsApp — el 78&nbsp;% de los internautas. 52 bancos con licencia (8 de importancia sistémica). Entidad del grupo con actividad en la plaza.</div>
-      <div class="src">Statista · DataReportal 2025 · CNBV</div>
+      <div class="src"><a href="https://www.statista.com/forecasts/1144728/whatsapp-users-in-mexico">Statista</a> · <a href="https://datareportal.com/reports/digital-2025-mexico">DataReportal 2025</a> · <a href="https://www.gob.mx/cnbv/acciones-y-programas/informacion-estadistica-de-la-banca-multiple">CNBV</a></div>
     </div>
   </div>
 </section>
 
-<!-- 9 · CHINA -->
+<!-- 5 · CHINA -->
 <section class="slide">
   <div class="kicker">El flujo que cruza las plazas</div>
   <h2>China → Europa: Meta empuja, nosotros tenemos las dos orillas</h2>
   <ul class="clean">
-    <li><strong>Meta corteja al ecosistema exportador chino:</strong> el 16 de junio de 2026 dedicó en Shenzhen la segunda edición china de su evento anual de mensajería, con foco en el crecimiento <em>cross-border</em> hacia Europa y Latinoamérica.</li>
-    <li><strong>Ya operamos a uno de esos exportadores:</strong> Anker — electrónica de consumo china vendiendo al mundo — es caso público del grupo (campaña Indonesia, 300 msg/s).</li>
+    <li><strong>Meta corteja al ecosistema exportador chino:</strong> el 16 de junio de 2026 dedicó en Shenzhen la segunda edición china de su evento anual de mensajería, con foco en el crecimiento <em>cross-border</em> hacia Europa y Latinoamérica <span style="color:var(--faint);font-size:.78rem">(evento con cobertura pública, jun-2026)</span>.</li>
+    <li><strong>Ya operamos a uno de esos exportadores:</strong> Anker — electrónica de consumo china vendiendo al mundo — es caso público del grupo (campaña Indonesia, 300 msg/s) <span style="color:var(--faint);font-size:.78rem">(<a href="https://sanuker.com">sanuker.com</a>)</span>.</li>
     <li><strong>La orilla de origen:</strong> venta y relación desde Hong Kong — adyacencia a Shenzhen, WhatsApp operable con normalidad.</li>
     <li><strong>La orilla de destino:</strong> operación en la entidad europea, con custodia y procesamiento 100&nbsp;% en la UE — el transporte es el cifrado de extremo a extremo de WhatsApp.</li>
   </ul>
   <div class="accline">No es un cuarto mercado: es tráfico que entra por las plazas que ya tenemos.</div>
 </section>
 
-<!-- 10 · FUENTES -->
-<section class="slide">
-  <div class="kicker">Fuentes</div>
-  <h2>Todo verificable</h2>
-  <div class="srcs">
-    <h3>Canal (fuentes primarias)</h3>
-    <a href="https://about.fb.com/news/2026/06/meta-business-agent/">Meta Newsroom — Meta Business Agent (jun-2026)</a><br>
-    <a href="https://s21.q4cdn.com/399680738/files/doc_financials/2025/q4/META-Q4-2025-Earnings-Call-Transcript.pdf">Meta — transcript earnings call Q4-2025 (PDF)</a><br>
-    <a href="https://www.fool.com/earnings/call-transcripts/2026/01/28/meta-meta-q4-2025-earnings-call-transcript/">Motley Fool — transcript Q4-2025</a>
-    <h3>Mercado (casas de análisis)</h3>
-    <a href="https://www.mi-3.com.au/17-04-2025/cpaas-market-set-surpass-34-billion-2026-juniper-research">Juniper Research — CPaaS 2025-26 (vía Mi3)</a><br>
-    <a href="https://www.juniperresearch.com/press/cpaas-retail-ecommerce-to-account-for-quarter-of-global-cpaas-revenue/">Juniper — retail ≈ 25 % del CPaaS</a><br>
-    <a href="https://www.mordorintelligence.com/industry-reports/communication-platform-as-a-service-cpaas-market">Mordor — reparto regional CPaaS</a><br>
-    <a href="https://www.alliedmarketresearch.com/conversational-ai-market-A13682">Allied/Grand View — conversational AI por vertical</a>
-    <h3>Censos — banca y seguros</h3>
-    <a href="https://www.ebf.eu/ebf-media-centre/ebf-facts-and-figures-2025/">EBF Facts &amp; Figures 2025</a><br>
-    <a href="https://www.eiopa.europa.eu/tools-and-data/insurance-statistics_en">EIOPA — insurance statistics (Solvencia II)</a><br>
-    <a href="https://www.statista.com/statistics/259910/number-of-banks-in-china/">NFRA vía Statista — bancos en China</a><br>
-    <a href="https://felaban.com/31-informe-economico-bancario-trimestral/">FELABAN — Informe Económico Bancario</a><br>
-    <a href="https://statrys.com/guides/hong-kong/banking/list-of-banks">HKMA — licensed banks (oct-2025)</a><br>
-    <a href="https://www.gob.mx/cnbv/acciones-y-programas/informacion-estadistica-de-la-banca-multiple">CNBV — banca múltiple</a><br>
-    <a href="https://www.bde.es/wbe/en/punto-informacion/contenidos/registros/registros-entidades/">Banco de España — registros de entidades</a><br>
-    <a href="https://www.inese.es/el-sector-asegurador-espanol-reduce-ligeramente-su-numero-de-entidades-operativas/">DGSFP vía INESE — aseguradoras España</a>
-    <h3>Censos — salud y gobierno</h3>
-    <a href="https://www.chinadaily.com.cn/a/202512/04/WS6931954ba310d6866eb2cef9.html">NHC China — hospitales 2024</a><br>
-    <a href="https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20250715-2">Eurostat — camas hospitalarias UE</a><br>
-    <a href="https://www.sanidad.gob.es/estadEstudios/estadisticas/sisInfSanSNS/ofertaRecursos/hospitales/docs/CNH_2025.pdf">Catálogo Nacional de Hospitales 2025</a><br>
-    <a href="https://www.ccre.org/img/uploads/piecesjointe/filename/CEMR_structures_and_competences_2016_EN.pdf">CEMR — gobiernos locales y regionales UE</a><br>
-    <a href="https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736177031&menu=ultiDatos&idp=1254734710990">INE — municipios de España</a>
-    <h3>Demanda y uso</h3>
-    <a href="https://www.goodwinlaw.com/en/insights/publications/2022/10/10_06-sec-and-cftc-send-powerful-message">Goodwin — multas SEC/CFTC ($2 B)</a><br>
-    <a href="https://www.leapxpert.com/electronic-messaging-compliance-investigation-and-regulatory-fines-summary/">LeapXpert — resumen de casos y multas</a><br>
-    <a href="https://iabspain.es/estudio/estudio-redes-sociales-2025-iab-spain/">IAB Spain — Estudio Redes Sociales 2025</a><br>
-    <a href="https://www.pewresearch.org/internet/2025/11/20/americans-social-media-use-2025/">Pew Research — uso de WhatsApp en EE. UU.</a><br>
-    <a href="https://www.statista.com/forecasts/1144728/whatsapp-users-in-mexico">Statista — WhatsApp en México</a><br>
-    <a href="https://datareportal.com/reports/digital-2025-mexico">DataReportal — Digital 2025 México</a><br>
-    <a href="https://www.statista.com/statistics/412500/hk-social-network-penetration/">Statista — plataformas en Hong Kong</a>
-  </div>
-  <div class="foot">MCCP · Análisis de mercado «A quién» · v1.0.0 · jul-2026 · documento de trabajo, no indexable</div>
-</section>
-
-<div id="hud">1 / 10</div>
+<div id="hud">1 / 5</div>
 <div id="hint">← → navegar · clic para avanzar</div>
 
 <script>
